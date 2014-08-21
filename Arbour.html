@@ -75,10 +75,21 @@
 
 	require_once '/MYMPFFL/Excel/reader.php';
     
-	$data = new Spreadsheet_Excel_Reader('/MYMPFFL/Rosters.xls');
-	
-	$data->dump($row_numbers=false,$col_letters=false,$sheet=0,$table_class='excel');
-	
+	$data = new Spreadsheet_Excel_Reader();
+	$data->setOutputEncoding('CP1251');
+	$data->read('/MYMPFFL/Rosters.xls');
+	error_reporting(E_ALL ^ E_NOTICE);
+
+	for ($i = 1; $i <= $data->sheets[0]['numRows']; $i++) {
+		for ($j = 1; $j <= $data->sheets[0]['numCols']; $j++) {
+			echo "\"".$data->sheets[0]['cells'][$i][$j]."\",";
+		}
+		echo "\n";
+
+	}
+
+	//print_r($data);
+	//print_r($data->formatRecords);
 	?>
 
 
