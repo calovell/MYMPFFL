@@ -73,9 +73,9 @@
     
     <?php
 
-	require_once 'MYMPFFL/Excel/reader.php';
+	require_once "/MYMPFFL/Excel/reader.php";
     
-	$data = new Spreadsheet_Excel_Reader("MYMPFFL/Rosters.xls");
+	$data = new Spreadsheet_Excel_Reader("/MYMPFFL/Rosters.xls");
 	
 	$data->dump($row_numbers=false,$col_letters=false,$sheet=0,$table_class='excel');
 	
