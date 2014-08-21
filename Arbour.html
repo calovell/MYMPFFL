@@ -71,6 +71,10 @@
 
     <div class="container marketing">
     
+    <?php
+
+	require_once 'Excel/reader.php';
+    
     $data = new Spreadsheet_Excel_Reader("Roster.xls");
     
     <!--
@@ -81,6 +85,8 @@
 	-->
 	
 	$data->dump($row_numbers=false,$col_letters=false,$sheet=0,$table_class='excel')
+	
+	?>
     
       <!-- FOOTER -->
       <footer>
