@@ -77,12 +77,12 @@
     
     $data = new Spreadsheet_Excel_Reader("Rosters.xls");
     
-    <!--
+    /**
 	* By default rows & cols indeces start with 1
 	* For change initial index use:
 	* $data->setRowColOffset(0);
 	*
-	-->
+	**/
 	
 	$data->dump($row_numbers=false,$col_letters=false,$sheet=0,$table_class='excel')
 	
